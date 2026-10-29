@@ -1,47 +1,49 @@
-# Cars Dealership - Full Stack Development Capstone
+# Full Stack Application Development Capstone Project
+
+**Repository Name:** `xrwvm-fullstack_developer_capstone`  
+**Project Name:** Cars Dealership Full-Stack Web Application
+
+---
 
 ## Project Overview
 
-Cars Dealership is a full-stack web application developed as part of the IBM Full Stack Software Developer Capstone Project.
+**Dealerships Website** is a cloud-native, full-stack web application developed as part of the **IBM Full Stack Software Developer Professional Certificate** Capstone Project.
 
-The application is designed for a national car dealership network in the United States. It allows users to browse dealerships, filter dealerships by state, view customer reviews, register, log in, and submit reviews.
+The application serves a national car retailer in the United States, allowing prospective and existing customers to:
+* Browse a nationwide network of 50 car dealership branches.
+* Filter dealerships by state.
+* View individual dealership details and available vehicle inventories (makes and models).
+* Read authentic customer reviews.
+* Submit new reviews with integrated AI sentiment analysis (positive, neutral, negative).
+* Securely register, authenticate, and manage user sessions.
 
-## Technologies Used
+---
 
-- Frontend: React, HTML, CSS, JavaScript, Bootstrap
-- Backend: Django, Python, Node.js, Express
-- Databases: MongoDB and SQLite
-- Sentiment Analysis: Python-based sentiment analysis microservice
-- Deployment: Docker, Kubernetes, IBM Cloud
-- Version Control and CI/CD: GitHub and GitHub Actions
+## Architecture & Technology Stack
 
-## Application Features
+* **Frontend:** React, HTML5, CSS3, JavaScript (ES6+), Bootstrap
+* **Backend:** Python, Django, Django REST Framework, SQLite
+* **Microservices:** Node.js, Express, MongoDB (Dealerships and Reviews Database)
+* **AI Microservice:** Python, Flask, NLTK Sentiment Analysis (VADER)
+* **DevOps & Cloud:** Docker, Kubernetes, IBM Code Engine / Theia, GitHub Actions (CI/CD)
 
-1. User registration and authentication
-2. Dealership listings
-3. Dealership filtering by state
-4. Individual dealership details
-5. Customer reviews
-6. Review submission
-7. Sentiment analysis of customer reviews
-8. Django admin panel
-9. Cloud deployment
+---
 
-## Project Structure
+## Repository Structure
 
-- `server/djangoapp` - Django application and API views
-- `server/djangoproj` - Django configuration
-- `server/frontend` - React frontend and static webpages
-- `server/database` - Node.js dealership microservice and database setup
-
-## Project Objective
-
-To build a responsive and scalable car dealership review platform using modern full-stack development technologies.
-
-## Course
-
-IBM Full Stack Software Developer Professional Certificate
-
-## Project Status
-
-Capstone development in progress.
+```
+xrwvm-fullstack_developer_capstone/
+├── server/
+│   ├── database/                  # Node.js & Express microservice with MongoDB data
+│   │   ├── data/                  # Seed datasets (dealerships.json, reviews.json)
+│   │   └── app.js                 # Express API routes (/fetchDealers, /fetchReviews)
+│   ├── djangoapp/                 # Django application views, models, and proxy services
+│   │   ├── microservices/         # Flask sentiment analysis microservice (/analyze)
+│   │   ├── models.py              # CarMake and CarModel schemas
+│   │   └── views.py               # Authentication and data endpoints
+│   ├── djangoproj/                # Django project settings and root URLs
+│   └── frontend/                  # React frontend application & static pages
+│       ├── src/components/        # React components (Register, Login, Dealers)
+│       └── static/                # Static HTML pages (About.html, Contact.html)
+└── README.md
+```
